@@ -1,7 +1,13 @@
 import React from 'react'
-import { NameList } from './name-list';
 
-export function ShortList({names, shortList, setShortList}) {
+import { NameList } from './name-list';
+import { useNames } from '../providers/names';
+import { useAppState } from '../providers/app-state';
+
+export function ShortList() {
+    const names = useNames();
+    const { shortList, setShortList } = useAppState();
+    
     const shortListedNames = names.filter((entry) => shortList.includes(entry.id))
 
     function removeFromShortList(id) { 

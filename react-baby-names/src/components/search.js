@@ -1,7 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 
-export function Search({searchValue, setSearchValue}) {
+import { useAppState } from '../providers/app-state';
+
+export function Search() {
     const inputRef = useRef();
+    const { searchValue, setSearchValue } = useAppState()
 
     useEffect(() => {
         inputRef.current.focus()

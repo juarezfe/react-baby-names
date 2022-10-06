@@ -1,31 +1,26 @@
-import React, { useState } from "react"
+import React from "react"
 import { Search } from "./components/search";
 import { ShortList } from "./components/short-list";
 import { NamePicker } from "./components/name-picker";
+import { ResetSearch } from "./components/reset-search";
 
-/* 
-<App>
-<Search />
-<ShortList />
-<NamePicker />
-<Footer />
-<App/> 
-*/
-
-
-
-
-
-function App({names}) {
-  const [searchValue, setSearchValue] = useState('');
-  const [shortList, setShortList] = useState([]);
+function App() {
 
   return (
     <>
-      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-      <ShortList names={names} shortList={shortList} setShortList={setShortList} />
-      <NamePicker names={names} searchValue={searchValue} shortList={shortList} setShortList={setShortList} />
+      <Search />
+      <NamesContainer />
     </>
+  )
+}
+
+function NamesContainer() {
+  return (
+  <main>
+    <ShortList />
+    <NamePicker />
+    <ResetSearch />
+  </main>
   )
 }
 

@@ -1,3 +1,7 @@
+body {
+    margin: 1em;
+}
+
 header {
     background: #2196f3;
     display: flex;
@@ -32,7 +36,7 @@ button {
     background: lightpink;
 }
 
-button:hover {
+.Female button:hover, .Male button:hover {
     opacity: 0.7;
 }
 
@@ -61,4 +65,13 @@ input {
     padding: 3px 4px;
     color: white;
     font-weight: bold;
+}
+
+
+button.reset-search {
+    border-radius: 50px;
+}
+
+button.reset-search:hover {
+    background: lightgray;
 }

@@ -5,13 +5,16 @@ import "./css/styles.css";
 
 // Components
 import App from './App';
-
-// Data
-import { names } from './data'
+import { NamesProvider } from './providers/names';
+import { AppStateProvider } from './providers/app-state';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App names={names} />
+  <NamesProvider>
+    <AppStateProvider>
+      <App />
+    </AppStateProvider>
+  </NamesProvider>
   </React.StrictMode>
 );
